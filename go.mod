@@ -10,6 +10,5 @@ require (
 	github.com/mattn/go-isatty v0.0.0-20150814002629-7fcbc72f853b // indirect
 	github.com/stretchr/testify v1.3.0 // indirect
 	golang.org/x/net v0.0.0-20150629084131-d9558e5c97f8 // indirect
-	gopkg.in/bluesuncorp/validator.v5 v5.9.1 // indirect	
-	github.com/spf13/viper v1.6.2 // indirect	
+	gopkg.in/bluesuncorp/validator.v5 v5.9.1 // indirect		
 )
