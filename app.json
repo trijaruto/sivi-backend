@@ -1,0 +1,12 @@
+{
+  "name": "sivi-backend: Go",
+  "description": "Go Getting Started Example App",
+  "keywords": [
+    "sivi-backend",
+    "go",
+    "sample",
+    "example"
+  ],
+  "website": "http://github.com/heroku/sivi-backend",
+  "repository": "http://github.com/heroku/sivi-backend"
+}

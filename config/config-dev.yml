@@ -1,0 +1,41 @@
+#logging settings
+log:
+  filename: log_sivi.log
+  path: /var/log/sivi-backend/
+  level: DEBUG
+
+#token
+token:
+  key:  inikeyuntuktoken #mesti di encrypt
+  expired:
+    second: 86400 #expired / 1 hour
+
+#apiauthenctication
+apiauth:
+  basic: #sementara pake static dulu    
+    username: username-basic-auth-sivi #mesti di encrypt
+    password: p@ssw0rd-basic-auth-sivi #mesti di encrypt   
+
+#database settings
+database:  
+  postgresql :
+    name : postgresql
+    hostname: 10.1.35.40
+    port: 3306
+    username: postgres #mesti di encrypt
+    password: postgres #mesti di encrypt
+    schema: public
+    driver: postgresql
+    
+#micro service settings
+micro:
+  service:
+    apiloginsivi:
+      name: apiloginsivi
+      port: 7183
+      path: /sivi/api/login  
+      log:
+        filename: api_login_sivi.log
+        path: /var/log/sivi_backend/
+        level: DEBUG     
+    
