@@ -51,7 +51,7 @@ func main() {
 	logFileName = append(logFileName, "/")
 	os.MkdirAll(strings.Join(logFileName, ""), os.ModePerm)
 	logFileName = append(logFileName, viper.GetString("log.filename"))
-	logfile, err := os.OpenFile(strings.Join(logFileName, ""), os.O_RDWR|os.O_CREATE|os.O_APPEND, 0666)
+	logfile, err := os.OpenFile(strings.Join(logFileName, ""), os.O_RDWR|os.O_CREATE|os.O_APPEND, 0777)
 	if err != nil {
 		panic(err)
 	} else {
