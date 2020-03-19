@@ -1,7 +1,7 @@
 #logging settings
 log:
   filename: log_sivi.log
-  path: /tmp/log/sivi-backend/
+  path: /app/log/sivi-backend/
   level: DEBUG
 
 #token
@@ -36,6 +36,6 @@ micro:
       path: /sivi/api/login  
       log:
         filename: api_login_sivi.log
-        path: /tmp/log/sivi_backend/
+        path: /app/log/sivi_backend/
         level: DEBUG     
     
