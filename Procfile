@@ -1,1 +1,1 @@
-web: bin/sivi-backend.exe
+web: bin\sivi-backend.exe

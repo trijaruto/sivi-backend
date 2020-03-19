@@ -7,7 +7,6 @@ import (
 	"net/http"
 	"os"
 	"strings"
-	"time"
 
 	"github.com/gin-gonic/gin"
 	_ "github.com/heroku/x/hmetrics/onload"
@@ -45,14 +44,15 @@ func main() {
 	//3. Logging init
 	fmt.Println("3. Logging Init")
 	var logFileName []string
-	currentDate := time.Now()
+	//currentDate := time.Now()
 	logFileName = append(logFileName, viper.GetString("log.path"))
-	logFileName = append(logFileName, currentDate.Format("2006-01-02"))
-	logFileName = append(logFileName, "/")
+	//logFileName = append(logFileName, currentDate.Format("2006-01-02"))
+	//logFileName = append(logFileName, "/")
 	os.MkdirAll(strings.Join(logFileName, ""), os.ModePerm)
 	logFileName = append(logFileName, viper.GetString("log.filename"))
-	logfile, err := os.OpenFile(strings.Join(logFileName, ""), os.O_RDWR|os.O_CREATE|os.O_APPEND, 0777)
+	logfile, err := os.OpenFile(strings.Join(logFileName, ""), os.O_RDWR|os.O_CREATE|os.O_APPEND, 0666)
 	if err != nil {
+		log.Println(err)
 		panic(err)
 	} else {
 		fmt.Println("   log : ")
@@ -60,10 +60,17 @@ func main() {
 	}
 	defer logfile.Close()
 
+	logInfo := log.New(logfile, "loginfo : ", log.LstdFlags)
+	logInfo.Println("configFileName : ", configFileName)
+	logInfo.Println("logfilename : ", logFileName)
+
 	port := os.Getenv("PORT")
 
 	if port == "" {
 		log.Fatal("$PORT must be set")
+		logInfo.Println("$PORT must be set")
+	} else {
+		logInfo.Println("port : ", port)
 	}
 
 	router := gin.New()
