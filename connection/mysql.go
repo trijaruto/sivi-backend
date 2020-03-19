@@ -21,7 +21,7 @@ type MySqlParams struct {
 	Driver   string
 }
 
-func (r *MySql) MySqlMultipleConnection(options ...MySqlParams) error {
+func (r *MySql) PostgreSQLMultipleConnection(options ...MySqlParams) error {
 	m := make(map[string]*sql.DB)
 	for _, opt := range options {
 		db, err := sql.Open(fmt.Sprintf("%s", opt.Driver), fmt.Sprintf("%s:%s@tcp(%s:%d)/%s", opt.User, opt.Password, opt.Host, opt.Port, opt.Schema))

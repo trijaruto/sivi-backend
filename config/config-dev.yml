@@ -18,24 +18,38 @@ apiauth:
 
 #database settings
 database:  
-  postgresql :
-    name : postgresql
-    hostname: 10.1.35.40
-    port: 3306
-    username: postgres #mesti di encrypt
-    password: postgres #mesti di encrypt
-    schema: public
-    driver: postgresql
+  localhost:
+    postgresql :
+      name : localhost
+      database : sivi
+      hostname: localhost
+      port: 5432
+      username: postgres #mesti di encrypt
+      password: postgres #mesti di encrypt
+      schema: public
+      driver: postgres
+  heroku:
+    postgresql :
+      name : herokupgsql
+      database : dbnn51gtkn3e2s
+      hostname: ec2-35-174-88-65.compute-1.amazonaws.com
+      port: 5432
+      username: hsmvyemjpiewbf #mesti di encrypt
+      password: 73ba9c0aa743c8305f14a8a25e3f63278410e48a62e705caae40bae9672d4718 #mesti di encrypt
+      schema: public
+      driver: postgres
+      uri: postgres://hsmvyemjpiewbf:73ba9c0aa743c8305f14a8a25e3f63278410e48a62e705caae40bae9672d4718@ec2-35-174-88-65.compute-1.amazonaws.com:5432/dbnn51gtkn3e2s
     
 #micro service settings
-micro:
+api:
   service:
-    apiloginsivi:
-      name: apiloginsivi
+    apilogin:
+      name: siviapilogin
+      description: get login useraccount 
       port: 7183
       path: /sivi/api/login  
       log:
-        filename: api_login_sivi.log
+        filename: sivi_api_login.log
         path: log/
         level: DEBUG     
-    
+        
