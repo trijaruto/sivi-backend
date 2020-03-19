@@ -6,8 +6,9 @@ import (
 	"log"
 	"net/http"
 	"os"
-	"sivi/sivi-backend/connection"
 	"strings"
+
+	connection "sivi.con"
 
 	"github.com/gin-gonic/gin"
 	_ "github.com/heroku/x/hmetrics/onload"
