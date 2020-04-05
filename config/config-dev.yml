@@ -42,6 +42,7 @@ database:
     
 #micro service settings
 api:
+  version: v1
   service:
     apilogin:
       name: siviapilogin
@@ -52,4 +53,13 @@ api:
         filename: sivi_api_login.log
         path: log/
         level: DEBUG     
+    apisignup:
+      name: siviapisignup
+      description: get signup useraccount 
+      port: 7183
+      path: /sivi/api/signup  
+      log:
+        filename: sivi_api_signup.log
+        path: log/
+        level: DEBUG 
         

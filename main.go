@@ -8,7 +8,8 @@ import (
 	"os"
 	"strings"
 
-	connection "sivi.con"
+	v1 "sivi/api/v1"
+	"sivi/connection"
 
 	"github.com/gin-gonic/gin"
 	_ "github.com/heroku/x/hmetrics/onload"
@@ -77,10 +78,10 @@ func main() {
 	// logInfo.Println("db : ", viper.GetString("database.localhost.postgresql.driver"))
 	// logInfo.Println("Name : ", viper.GetString("database.localhost.postgresql.name"))
 
-	//4. Connection DB Localhost
+	//4. Connection DB HEROKU
 	fmt.Println("4. Connection DB PostgreSQL Heroku")
 	dbPgsql := connection.Pgsql{}
-	dbPgsql.PgsqlMultipleConnection(connection.PgsqlParams{
+	dbPgsql.HerokuPgsqlMultipleConnection(connection.PgsqlParams{
 		Name: viper.GetString("database.heroku.postgresql.name"), Database: viper.GetString("database.heroku.postgresql.database"), Host: viper.GetString("database.heroku.postgresql.hostname"), Port: viper.GetInt("database.heroku.postgresql.port"), User: viper.GetString("database.heroku.postgresql.username"), Password: viper.GetString("database.heroku.postgresql.password"), Schema: viper.GetString("database.heroku.postgresql.schema"), Driver: viper.GetString("database.heroku.postgresql.driver"), URI: viper.GetString("database.heroku.postgresql.uri"),
 	})
 	err = dbPgsql.ListPgsql[viper.GetString("database.heroku.postgresql.name")].Ping()
@@ -114,6 +115,20 @@ func main() {
 	router.GET("/", func(c *gin.Context) {
 		c.HTML(http.StatusOK, "index.tmpl.html", nil)
 	})
+
+	if viper.GetString("api.version") == "v1" {
+		fmt.Println("API Version ", viper.GetString("api.version"))
+		apiStruct := &v1.ServiceStruct{
+			ListPgsql: dbPgsql.ListPgsql,
+			LogInfo:   logInfo}
+		rv1 := router.Group(fmt.Sprintf("/%s", viper.GetString("api.version")))
+		{
+			rv1.POST(fmt.Sprintf("/%s", viper.GetString("api.service.apilogin.path")), apiStruct.PostLoginService)
+			rv1.POST(fmt.Sprintf("/%s", viper.GetString("api.service.apisignup.path")), apiStruct.PostSignUp)
+		}
+	} else {
+		fmt.Println("API Version ", "n version")
+	}
 
 	router.Run(":" + port)
 }

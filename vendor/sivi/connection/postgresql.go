@@ -40,6 +40,27 @@ type PgsqlParams struct {
 func (r *Pgsql) PgsqlMultipleConnection(options ...PgsqlParams) error {
 	m := make(map[string]*sql.DB)
 	for _, opt := range options {
+		db, err := sql.Open(fmt.Sprintf("%s", opt.Driver), fmt.Sprintf("host=%s port=%d user=%s password=%s dbname=%s sslmode=disable",
+			opt.Host, opt.Port, opt.User, opt.Password, opt.Database))
+
+		if err != nil {
+			fmt.Println("err", err)
+			panic(err)
+		}
+		err = db.Ping()
+		if err != nil {
+			db.Close()
+			panic(err)
+		}
+		m[opt.Name] = db
+	}
+	r.ListPgsql = m
+	return nil
+}
+
+func (r *Pgsql) HerokuPgsqlMultipleConnection(options ...PgsqlParams) error {
+	m := make(map[string]*sql.DB)
+	for _, opt := range options {
 		db, err := sql.Open(fmt.Sprintf("%s", opt.Driver), fmt.Sprintf("host=%s port=%d user=%s password=%s dbname=%s",
 			opt.Host, opt.Port, opt.User, opt.Password, opt.Database))
 
