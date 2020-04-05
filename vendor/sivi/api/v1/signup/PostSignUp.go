@@ -4,9 +4,9 @@ import (
 	"database/sql"
 	"fmt"
 	"sivi/common"
+	"sivi/entity"
 
 	"github.com/gin-gonic/gin"
-	"gitlab.smartfren.com/common/rest-client/entity"
 )
 
 func PostSignUp(ListPgsql map[string]*sql.DB, c *gin.Context) (entity.ResponseHttp, error) {

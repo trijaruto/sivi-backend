@@ -1,11 +1,11 @@
 package common
 
 const (
-	ERRCODE_UNDEFINED     int = -1
-	ERRCODE_SUCCESS       int = 0
-	ERRCODE_NOTFOUND      int = 1
-	ERRCODE_ALREADYEXISTS int = 2
-	ERRCODE_BADROUTING    int = 3
+	ERRCODE_UNDEFINED     int8 = -1
+	ERRCODE_SUCCESS       int8 = 0
+	ERRCODE_NOTFOUND      int8 = 1
+	ERRCODE_ALREADYEXISTS int8 = 2
+	ERRCODE_BADROUTING    int8 = 3
 )
 
 const (
