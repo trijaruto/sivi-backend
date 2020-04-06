@@ -11,6 +11,7 @@ import (
 
 func PostSignUp(ListPgsql map[string]*sql.DB, c *gin.Context) (entity.ResponseHttp, error) {
 	fmt.Println("PostSignUp ", "PostSignUp")
+
 	return entity.ResponseHttp{
 		Code:    common.ERRCODE_UNDEFINED,
 		Message: common.ERRMSG_UNDEFINED,

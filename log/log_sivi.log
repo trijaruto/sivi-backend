@@ -136,3 +136,121 @@ loginfo : 2020/04/05 20:59:41 db :  postgres
 loginfo : 2020/04/05 20:59:41 Name :  herokupgsql
 loginfo : 2020/04/05 20:59:41 connectionDB Success
 loginfo : 2020/04/05 20:59:41 App running on port :  5000
+loginfo : 2020/04/05 21:37:13 configFileName :  [config- dev]
+loginfo : 2020/04/05 21:37:13 logfilename :  [log/ log_sivi.log]
+loginfo : 2020/04/05 21:37:38 db :  postgres
+loginfo : 2020/04/05 21:37:38 Name :  herokupgsql
+loginfo : 2020/04/05 21:37:38 connectionDB Success
+loginfo : 2020/04/05 21:37:38 App running on port :  5000
+loginfo : 2020/04/05 21:41:13 configFileName :  [config- dev]
+loginfo : 2020/04/05 21:41:13 logfilename :  [log/ log_sivi.log]
+loginfo : 2020/04/05 21:41:50 configFileName :  [config- dev]
+loginfo : 2020/04/05 21:41:50 logfilename :  [log/ log_sivi.log]
+loginfo : 2020/04/05 21:41:50 db :  postgres
+loginfo : 2020/04/05 21:41:50 Name :  localhost
+loginfo : 2020/04/05 21:41:50 connectionDB Success
+loginfo : 2020/04/05 21:41:50 App running on port :  5000
+loginfo : 2020/04/05 21:59:11 configFileName :  [config- dev]
+loginfo : 2020/04/05 21:59:11 logfilename :  [log/ log_sivi.log]
+loginfo : 2020/04/05 21:59:11 db :  postgres
+loginfo : 2020/04/05 21:59:11 Name :  localhost
+loginfo : 2020/04/05 21:59:11 connectionDB Success
+loginfo : 2020/04/05 21:59:11 App running on port :  5000
+loginfo : 2020/04/05 22:03:29 configFileName :  [config- dev]
+loginfo : 2020/04/05 22:03:29 logfilename :  [log/ log_sivi.log]
+loginfo : 2020/04/05 22:03:29 db :  postgres
+loginfo : 2020/04/05 22:03:29 Name :  localhost
+loginfo : 2020/04/05 22:03:29 connectionDB Success
+loginfo : 2020/04/05 22:03:29 App running on port :  5000
+loginfo : 2020/04/05 22:05:45 configFileName :  [config- dev]
+loginfo : 2020/04/05 22:05:45 logfilename :  [log/ log_sivi.log]
+loginfo : 2020/04/05 22:05:45 db :  postgres
+loginfo : 2020/04/05 22:05:45 Name :  localhost
+loginfo : 2020/04/05 22:05:45 connectionDB Success
+loginfo : 2020/04/05 22:05:45 App running on port :  5000
+loginfo : 2020/04/05 22:08:27 configFileName :  [config- dev]
+loginfo : 2020/04/05 22:08:27 logfilename :  [log/ log_sivi.log]
+loginfo : 2020/04/05 22:08:27 db :  postgres
+loginfo : 2020/04/05 22:08:27 Name :  localhost
+loginfo : 2020/04/05 22:08:27 connectionDB Success
+loginfo : 2020/04/05 22:08:27 App running on port :  5000
+loginfo : 2020/04/05 22:09:56 configFileName :  [config- dev]
+loginfo : 2020/04/05 22:09:56 logfilename :  [log/ log_sivi.log]
+loginfo : 2020/04/05 22:09:56 db :  postgres
+loginfo : 2020/04/05 22:09:56 Name :  localhost
+loginfo : 2020/04/05 22:09:56 connectionDB Success
+loginfo : 2020/04/05 22:09:56 App running on port :  5000
+loginfo : 2020/04/05 22:11:52 configFileName :  [config- dev]
+loginfo : 2020/04/05 22:11:52 logfilename :  [log/ log_sivi.log]
+loginfo : 2020/04/05 22:11:52 db :  postgres
+loginfo : 2020/04/05 22:11:52 Name :  localhost
+loginfo : 2020/04/05 22:11:52 connectionDB Success
+loginfo : 2020/04/05 22:11:52 App running on port :  5000
+loginfo : 2020/04/05 22:23:59 configFileName :  [config- dev]
+loginfo : 2020/04/05 22:23:59 logfilename :  [log/ log_sivi.log]
+loginfo : 2020/04/05 22:23:59 db :  postgres
+loginfo : 2020/04/05 22:23:59 Name :  localhost
+loginfo : 2020/04/05 22:23:59 connectionDB Success
+loginfo : 2020/04/05 22:23:59 App running on port :  5000
+loginfo : 2020/04/06 00:14:26 configFileName :  [config- dev]
+loginfo : 2020/04/06 00:14:26 logfilename :  [log/ log_sivi.log]
+loginfo : 2020/04/06 00:14:26 db :  postgres
+loginfo : 2020/04/06 00:14:26 Name :  localhost
+loginfo : 2020/04/06 00:14:26 connectionDB Success
+loginfo : 2020/04/06 00:14:26 App running on port :  5000
+loginfo : 2020/04/06 00:15:15 configFileName :  [config- dev]
+loginfo : 2020/04/06 00:15:15 logfilename :  [log/ log_sivi.log]
+loginfo : 2020/04/06 00:15:15 db :  postgres
+loginfo : 2020/04/06 00:15:15 Name :  localhost
+loginfo : 2020/04/06 00:15:15 connectionDB Success
+loginfo : 2020/04/06 00:15:15 App running on port :  5000
+loginfo : 2020/04/06 00:18:00 configFileName :  [config- dev]
+loginfo : 2020/04/06 00:18:00 logfilename :  [log/ log_sivi.log]
+loginfo : 2020/04/06 00:18:00 db :  postgres
+loginfo : 2020/04/06 00:18:00 Name :  localhost
+loginfo : 2020/04/06 00:18:00 connectionDB Success
+loginfo : 2020/04/06 00:18:00 App running on port :  5000
+loginfo : 2020/04/06 00:30:03 configFileName :  [config- dev]
+loginfo : 2020/04/06 00:30:03 logfilename :  [log/ log_sivi.log]
+loginfo : 2020/04/06 00:30:03 db :  postgres
+loginfo : 2020/04/06 00:30:03 Name :  localhost
+loginfo : 2020/04/06 00:30:03 connectionDB Success
+loginfo : 2020/04/06 00:30:03 App running on port :  5000
+loginfo : 2020/04/06 00:31:18 configFileName :  [config- dev]
+loginfo : 2020/04/06 00:31:18 logfilename :  [log/ log_sivi.log]
+loginfo : 2020/04/06 00:31:19 db :  postgres
+loginfo : 2020/04/06 00:31:19 Name :  localhost
+loginfo : 2020/04/06 00:31:19 connectionDB Success
+loginfo : 2020/04/06 00:31:19 App running on port :  5000
+loginfo : 2020/04/06 00:56:17 configFileName :  [config- dev]
+loginfo : 2020/04/06 00:56:17 logfilename :  [log/ log_sivi.log]
+loginfo : 2020/04/06 00:57:30 configFileName :  [config- dev]
+loginfo : 2020/04/06 00:57:30 logfilename :  [log/ log_sivi.log]
+loginfo : 2020/04/06 00:57:30 db :  postgres
+loginfo : 2020/04/06 00:57:30 Name :  herokupgsql
+loginfo : 2020/04/06 00:57:30 connectionDB Success
+loginfo : 2020/04/06 00:57:30 App running on port :  5000
+loginfo : 2020/04/06 01:06:22 configFileName :  [config- dev]
+loginfo : 2020/04/06 01:06:22 logfilename :  [log/ log_sivi.log]
+loginfo : 2020/04/06 01:06:22 db :  postgres
+loginfo : 2020/04/06 01:06:22 Name :  herokupgsql
+loginfo : 2020/04/06 01:06:22 connectionDB Success
+loginfo : 2020/04/06 01:06:22 App running on port :  5000
+loginfo : 2020/04/06 01:07:37 configFileName :  [config- dev]
+loginfo : 2020/04/06 01:07:37 logfilename :  [log/ log_sivi.log]
+loginfo : 2020/04/06 01:07:37 db :  postgres
+loginfo : 2020/04/06 01:07:37 Name :  herokupgsql
+loginfo : 2020/04/06 01:07:37 connectionDB Success
+loginfo : 2020/04/06 01:07:37 App running on port :  5000
+loginfo : 2020/04/06 14:36:54 configFileName :  [config- dev]
+loginfo : 2020/04/06 14:36:54 logfilename :  [log/ log_sivi.log]
+loginfo : 2020/04/06 14:36:55 db :  postgres
+loginfo : 2020/04/06 14:36:55 Name :  herokupgsql
+loginfo : 2020/04/06 14:36:55 connectionDB Success
+loginfo : 2020/04/06 14:36:55 App running on port :  5000
+loginfo : 2020/04/06 14:41:56 configFileName :  [config- dev]
+loginfo : 2020/04/06 14:41:56 logfilename :  [log/ log_sivi.log]
+loginfo : 2020/04/06 14:41:59 db :  postgres
+loginfo : 2020/04/06 14:41:59 Name :  herokupgsql
+loginfo : 2020/04/06 14:41:59 connectionDB Success
+loginfo : 2020/04/06 14:41:59 App running on port :  5000

@@ -71,12 +71,12 @@ func main() {
 	// fmt.Println("4. Connection DB PostgreSQL Localhost")
 	// dbPgsql := connection.Pgsql{}
 	// dbPgsql.PgsqlMultipleConnection(connection.PgsqlParams{
-	// 	Name: viper.GetString("database.localhost.postgresql.name"), Database: viper.GetString("database.localhost.postgresql.database"), Host: viper.GetString("database.localhost.postgresql.hostname"), Port: viper.GetInt("database.localhost.postgresql.port"), User: viper.GetString("database.localhost.postgresql.username"), Password: viper.GetString("database.localhost.postgresql.password"), Schema: viper.GetString("database.localhost.postgresql.schema"), Driver: viper.GetString("database.localhost.postgresql.driver"),
+	// 	Name: viper.GetString("database.heroku.postgresql.name"), Database: viper.GetString("database.localhost.postgresql.database"), Host: viper.GetString("database.localhost.postgresql.hostname"), Port: viper.GetInt("database.localhost.postgresql.port"), User: viper.GetString("database.localhost.postgresql.username"), Password: viper.GetString("database.localhost.postgresql.password"), Schema: viper.GetString("database.localhost.postgresql.schema"), Driver: viper.GetString("database.localhost.postgresql.driver"),
 	// })
-	// err = dbPgsql.ListPgsql[viper.GetString("database.localhost.postgresql.name")].Ping()
+	// err = dbPgsql.ListPgsql[viper.GetString("database.heroku.postgresql.name")].Ping()
 
 	// logInfo.Println("db : ", viper.GetString("database.localhost.postgresql.driver"))
-	// logInfo.Println("Name : ", viper.GetString("database.localhost.postgresql.name"))
+	// logInfo.Println("Name : ", viper.GetString("database.heroku.postgresql.name"))
 
 	//4. Connection DB HEROKU
 	fmt.Println("4. Connection DB PostgreSQL Heroku")
@@ -111,23 +111,30 @@ func main() {
 	router.Use(gin.Logger())
 	router.LoadHTMLGlob("templates/*.tmpl.html")
 	router.Static("/static", "static")
-
 	router.GET("/", func(c *gin.Context) {
 		c.HTML(http.StatusOK, "index.tmpl.html", nil)
 	})
 
+	router.GET("/ping", func(c *gin.Context) {
+		c.JSON(http.StatusOK, gin.H{
+			"message": "pong",
+		})
+	})
+
+	authorized := router.Group("/", gin.BasicAuth(gin.Accounts{
+		"sivi":      "!1qaz)0plm8",
+		"trijaruto": "asdlkjmnbzxc",
+	}))
+
 	if viper.GetString("api.version") == "v1" {
-		fmt.Println("API Version ", viper.GetString("api.version"))
-		apiStruct := &v1.ServiceStruct{
-			ListPgsql: dbPgsql.ListPgsql,
-			LogInfo:   logInfo}
-		rv1 := router.Group(fmt.Sprintf("/%s", viper.GetString("api.version")))
+		apiStruct := &v1.ServiceStruct{ListPgsql: dbPgsql.ListPgsql, LogInfo: logInfo}
+		rv1 := authorized.Group(fmt.Sprintf("/%s", viper.GetString("api.version")))
 		{
 			rv1.POST(fmt.Sprintf("/%s", viper.GetString("api.service.apilogin.path")), apiStruct.PostLoginService)
 			rv1.POST(fmt.Sprintf("/%s", viper.GetString("api.service.apisignup.path")), apiStruct.PostSignUp)
 		}
 	} else {
-		fmt.Println("API Version ", "n version")
+		fmt.Println("API Version ", "no version")
 	}
 
 	router.Run(":" + port)
