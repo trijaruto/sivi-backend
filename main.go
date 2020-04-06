@@ -68,26 +68,26 @@ func main() {
 	logInfo.Println("logfilename : ", logFileName)
 
 	//4. Connection DB Localhost
-	fmt.Println("4. Connection DB PostgreSQL Localhost")
-	dbPgsql := connection.Pgsql{}
-	dbPgsql.PgsqlMultipleConnection(connection.PgsqlParams{
-		Name: viper.GetString("database.heroku.postgresql.name"), Database: viper.GetString("database.localhost.postgresql.database"), Host: viper.GetString("database.localhost.postgresql.hostname"), Port: viper.GetInt("database.localhost.postgresql.port"), User: viper.GetString("database.localhost.postgresql.username"), Password: viper.GetString("database.localhost.postgresql.password"), Schema: viper.GetString("database.localhost.postgresql.schema"), Driver: viper.GetString("database.localhost.postgresql.driver"),
-	})
-	err = dbPgsql.ListPgsql[viper.GetString("database.heroku.postgresql.name")].Ping()
-
-	logInfo.Println("db : ", viper.GetString("database.localhost.postgresql.driver"))
-	logInfo.Println("Name : ", viper.GetString("database.heroku.postgresql.name"))
-
-	//4. Connection DB HEROKU
-	// fmt.Println("4. Connection DB PostgreSQL Heroku")
+	// fmt.Println("4. Connection DB PostgreSQL Localhost")
 	// dbPgsql := connection.Pgsql{}
-	// dbPgsql.HerokuPgsqlMultipleConnection(connection.PgsqlParams{
-	// 	Name: viper.GetString("database.heroku.postgresql.name"), Database: viper.GetString("database.heroku.postgresql.database"), Host: viper.GetString("database.heroku.postgresql.hostname"), Port: viper.GetInt("database.heroku.postgresql.port"), User: viper.GetString("database.heroku.postgresql.username"), Password: viper.GetString("database.heroku.postgresql.password"), Schema: viper.GetString("database.heroku.postgresql.schema"), Driver: viper.GetString("database.heroku.postgresql.driver"), URI: viper.GetString("database.heroku.postgresql.uri"),
+	// dbPgsql.PgsqlMultipleConnection(connection.PgsqlParams{
+	// 	Name: viper.GetString("database.heroku.postgresql.name"), Database: viper.GetString("database.localhost.postgresql.database"), Host: viper.GetString("database.localhost.postgresql.hostname"), Port: viper.GetInt("database.localhost.postgresql.port"), User: viper.GetString("database.localhost.postgresql.username"), Password: viper.GetString("database.localhost.postgresql.password"), Schema: viper.GetString("database.localhost.postgresql.schema"), Driver: viper.GetString("database.localhost.postgresql.driver"),
 	// })
 	// err = dbPgsql.ListPgsql[viper.GetString("database.heroku.postgresql.name")].Ping()
 
-	// logInfo.Println("db : ", viper.GetString("database.heroku.postgresql.driver"))
+	// logInfo.Println("db : ", viper.GetString("database.localhost.postgresql.driver"))
 	// logInfo.Println("Name : ", viper.GetString("database.heroku.postgresql.name"))
+
+	//4. Connection DB HEROKU
+	fmt.Println("4. Connection DB PostgreSQL Heroku")
+	dbPgsql := connection.Pgsql{}
+	dbPgsql.HerokuPgsqlMultipleConnection(connection.PgsqlParams{
+		Name: viper.GetString("database.heroku.postgresql.name"), Database: viper.GetString("database.heroku.postgresql.database"), Host: viper.GetString("database.heroku.postgresql.hostname"), Port: viper.GetInt("database.heroku.postgresql.port"), User: viper.GetString("database.heroku.postgresql.username"), Password: viper.GetString("database.heroku.postgresql.password"), Schema: viper.GetString("database.heroku.postgresql.schema"), Driver: viper.GetString("database.heroku.postgresql.driver"), URI: viper.GetString("database.heroku.postgresql.uri"),
+	})
+	err = dbPgsql.ListPgsql[viper.GetString("database.heroku.postgresql.name")].Ping()
+
+	logInfo.Println("db : ", viper.GetString("database.heroku.postgresql.driver"))
+	logInfo.Println("Name : ", viper.GetString("database.heroku.postgresql.name"))
 
 	if err != nil {
 		logInfo.Println("connectionDB", "failed")
