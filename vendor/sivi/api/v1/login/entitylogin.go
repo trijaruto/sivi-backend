@@ -6,14 +6,13 @@ type LoginRequest struct {
 }
 
 type LoginResponse struct {
-	ID       int    `json:"id"`
-	UserName string `json:"username"`
-	IsStatus int    `json:"istatus"`
-	// Nik           int         `json:"nik"`
-	// Email         string      `json:"email"`
-	// IsActive      int         `json:"isactive"`
-	// UserTypeID    int         `json:"usertypeid"`
-	// UserTypeCode  string      `json:"usertypecode"`
-	// UserTypeName  string      `json:"usertypename"`
-	// PlantSlocItem interface{} `json:"plantsloc"`
+	ID         int    `json:"id"`
+	UserName   string `json:"username"`
+	Password   string `json:"password"`
+	IsStatus   int    `json:"istatus"`
+	CreateTime string `json:"createtime"`
+	CreatedBy  string `json:"createdby"`
+	UpdateTime string `json:"updatetime"`
+	UpdatedBy  string `json:"updatedby"`
+	UsertypeID int    `json:"usertype_id"`
 }
