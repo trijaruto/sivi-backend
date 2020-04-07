@@ -13,7 +13,7 @@ import (
 
 func PostLogin(ListPgsql map[string]*sql.DB, c *gin.Context) (entity.ResponseHttp, error) {
 	fmt.Println("postlogin ", "PostLogin")
-	// Validate input
+
 	var loginreq LoginRequest
 	if err := c.BindJSON(&loginreq); err != nil {
 		return entity.ResponseHttp{

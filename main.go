@@ -130,6 +130,7 @@ func main() {
 		apiStruct := &v1.ServiceStruct{ListPgsql: dbPgsql.ListPgsql, LogInfo: logInfo}
 		rv1 := authorized.Group(fmt.Sprintf("/%s", viper.GetString("api.version")))
 		{
+			
 			rv1.POST(fmt.Sprintf("/%s", viper.GetString("api.service.apilogin.path")), apiStruct.PostLoginService)
 			rv1.POST(fmt.Sprintf("/%s", viper.GetString("api.service.apisignup.path")), apiStruct.PostSignUpService)
 		}

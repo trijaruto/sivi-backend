@@ -10,6 +10,7 @@ const (
 	ERRCODE_USERNAME_NOT_ACTIVE int8 = 5
 	ERRCODE_WRONG_PASSWORD      int8 = 6
 	ERRCODE_EMPTY_VALUE         int8 = 7
+	ERRCODE_MIN_PASSWORD_LENGTH int8 = 8
 )
 
 const (
@@ -22,10 +23,21 @@ const (
 	ERRMSG_USERNAME_NOT_ACTIVE string = "username not active"
 	ERRMSG_WRONG_PASSWORD      string = "wrong password"
 	ERRMSG_EMPTY_VALUE         string = "empty value"
+	ERRMSG_MIN_PASSWORD_LENGTH string = "min password length"
+)
+
+const (
+	APP_MIN_PASSWORD_LENGTH int = 8
 )
 
 const (
 	DBCODE_USER_STATUS_UNDEFINED  int = -1
 	DBCODE_USER_STATUS_NOT_ACTIVE int = 0
 	DBCODE_USER_STATUS_ACTIVE     int = 1
+)
+
+const (
+	DBCODE_USER_TYPE_MASTER_ADMIN int = -1
+	DBCODE_USER_TYPE_ADMIN        int = 0
+	DBCODE_USER_TYPE_USER         int = 1
 )
