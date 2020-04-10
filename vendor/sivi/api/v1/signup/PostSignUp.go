@@ -6,6 +6,7 @@ import (
 	"log"
 	"sivi/common"
 	"sivi/entity"
+	"sivi/security"
 	"strconv"
 	"time"
 
@@ -107,7 +108,7 @@ func InsertUserAccount(ListPgsql map[string]*sql.DB, sReq SignUpRequest) (entity
 	var uaID int
 	err = resUa.QueryRow(
 		sReq.UserName,
-		sReq.Password,
+		security.GeneratePassword(fmt.Sprintf("%s:%s", sReq.UserName, sReq.Password)),
 		common.DBCODE_USER_STATUS_NOT_ACTIVE,
 		time.Now(),
 		sReq.UserName,

@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"sivi/common"
 	"sivi/entity"
-	"strings"
+	"sivi/security"
 
 	"github.com/gin-gonic/gin"
 	"github.com/spf13/viper"
@@ -77,9 +77,9 @@ func PostLogin(ListPgsql map[string]*sql.DB, c *gin.Context) (entity.ResponseHtt
 			fmt.Println("resLogin.Password ", resLogin.Password)
 			fmt.Println("loginreq Password ", loginreq.Password)
 
-			var scompare = strings.Compare(resLogin.Password, loginreq.Password)
+			var scompare = security.ComparePassword(resLogin.Password, fmt.Sprintf("%s:%s", loginreq.UserName, loginreq.Password))
 			fmt.Println("scompare ", scompare)
-			if scompare == 0 {
+			if scompare {
 				resLogin.Password = "***************"
 				return entity.ResponseHttp{
 					Code:    common.ERRCODE_SUCCESS,

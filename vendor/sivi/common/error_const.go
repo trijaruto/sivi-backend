@@ -11,6 +11,7 @@ const (
 	ERRCODE_WRONG_PASSWORD      int8 = 6
 	ERRCODE_EMPTY_VALUE         int8 = 7
 	ERRCODE_MIN_PASSWORD_LENGTH int8 = 8
+	ERRCODE_WRONG_TOKEN         int8 = 9
 )
 
 const (
@@ -24,6 +25,7 @@ const (
 	ERRMSG_WRONG_PASSWORD      string = "wrong password"
 	ERRMSG_EMPTY_VALUE         string = "empty value"
 	ERRMSG_MIN_PASSWORD_LENGTH string = "min password length"
+	ERRMSG_WRONG_TOKEN         string = "wrong token"
 )
 
 const (

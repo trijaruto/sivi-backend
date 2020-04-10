@@ -46,7 +46,7 @@ api:
   service:
     apilogin:
       name: siviapilogin      
-      description: get login useraccount 
+      description: login useraccount 
       port: 7183      
       path: /sivi/api/login  
       log:
@@ -55,11 +55,20 @@ api:
         level: DEBUG     
     apisignup:
       name: siviapisignup      
-      description: get signup useraccount 
+      description: signup useraccount 
       port: 7183      
       path: /sivi/api/signup  
       log:
         filename: sivi_api_signup.log
+        path: log/
+        level: DEBUG 
+    apiactivated:
+      name: siviapiactivated      
+      description: activated useraccount 
+      port: 7183      
+      path: /sivi/api/activated
+      log:
+        filename: sivi_api_activated.log
         path: log/
         level: DEBUG 
         
